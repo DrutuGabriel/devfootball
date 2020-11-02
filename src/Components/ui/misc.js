@@ -49,3 +49,28 @@ export const reverseArray = actualArray => {
 
   return reversedArray
 }
+
+export const validate = element => {
+  let validation = [true, ''];
+
+  let isValid, message;
+
+  if(element.validation.email){
+    isValid = /\S+@\S+\.\S+/.test(element.value);
+    message = `${!isValid ? 'Must be a valid email' : ''}`;
+
+    validation = !isValid ? [isValid, message] : validation;
+  }
+
+  if(element.validation.required){
+    isValid = element.value.trim() !== '';
+    message = `${!isValid ? 'This field is required' : ''}`;
+
+    validation = !isValid ? [isValid, message] : validation;
+  }
+
+
+
+
+  return validation;
+}
