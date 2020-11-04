@@ -84,8 +84,6 @@ class Enroll extends Component {
         formError: true
       });
     }
-    
-
   }
 
   updateForm = ({event, id}) => {   
