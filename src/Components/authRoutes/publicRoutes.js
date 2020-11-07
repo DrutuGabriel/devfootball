@@ -1,18 +1,18 @@
 import React from 'react';
 import {Route, Redirect} from 'react-router-dom';
 
-const PrivateRoutes = ({
+const PublicRoutes = ({
   user,
   component: Comp,
   ...rest
 }) => {
   return (
     <Route {...rest} component={props => (
-        user ? 
-        <Comp {...props} user={user} /> : 
-        <Redirect to="/signin" />
-    )} />
+      rest.restricted && user ? 
+        <Redirect to="/dashboard" /> :    
+        <Comp {...props} user={user} />
+    )}/>
   );
 };
 
-export default PrivateRoutes;
+export default PublicRoutes;
