@@ -1,23 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import {BrowserRouter} from 'react-router-dom';
 import Routes from './routes';
+import {firebase} from './firebase';
 
 import './Resources/css/app.css';
 
 
-const App = () => {
+const App = (props) => {
   return (
     <BrowserRouter>
-      <Routes />
+      <Routes {...props}/>
     </BrowserRouter>
   )
 }
 
+firebase.auth().onAuthStateChanged((user) => {
+  ReactDOM.render(
+    <React.StrictMode>
+      <App user={user} />
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
+});
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+
