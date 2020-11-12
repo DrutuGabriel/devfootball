@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from './HOC/Layout';
-import {Switch, Route} from 'react-router-dom';
+import {Switch} from 'react-router-dom';
 
 import PrivateRoute from './Components/authRoutes/privateRoutes';
 import PublicRoute from './Components/authRoutes/publicRoutes';
@@ -10,6 +10,7 @@ import SignIn from './Components/signin';
 import Dashboard from './Components/admin/Dashboard';
 
 import AdminMatches from './Components/admin/matches';
+import AddEditMatch from './Components/admin/matches/addEditMatch';
 
 const Routes = (props) => {
 
@@ -28,6 +29,13 @@ const Routes = (props) => {
           path="/admin_matches" 
           exact 
           component={AdminMatches}
+        />
+
+        <PrivateRoute 
+          {...props} 
+          path="/admin_matches/edit_match/:id"
+          exact 
+          component={AddEditMatch}
         />
 
         <PublicRoute 
