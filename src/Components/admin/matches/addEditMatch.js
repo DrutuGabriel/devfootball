@@ -204,6 +204,14 @@ class AddEditMatch extends Component {
     });
   }
 
+  successForm = msg => {
+    this.setState({formSuccess: msg});
+
+    setTimeout(() => {
+      this.setState({formSuccess: ''});
+    }, 2000)
+  }
+
   submitForm = event => {
     event.preventDefault();
    
@@ -215,8 +223,39 @@ class AddEditMatch extends Component {
       formIsValid = this.state.formdata[key].valid && formIsValid;
     }
 
+    this.state.teams.forEach(team => {
+      if(team.shortName === dataToSubmit.local){
+        dataToSubmit['localThmb'] = team.thmb;
+      } else if(team.shortName === dataToSubmit.away){
+        dataToSubmit['awayThmb'] = team.thmb;
+      }
+    })
+
     if(formIsValid){
-      console.log(dataToSubmit);
+      if(this.state.formType == 'Edit Match'){
+        firebaseDB.ref(`matches/${this.state.matchId}`)
+          .update(dataToSubmit)
+          .then(() => {
+            this.successForm('Updated correctly');
+          })
+          .catch(e => {
+            this.setState({
+              formError: true
+            });
+          });
+      } else {
+        firebaseMatches.push(dataToSubmit)
+          .then(() => {
+            this.props.history.push('/admin_matches');
+          })
+          .catch(e => {
+            this.setState({
+              formError: true
+            });
+          })
+
+      }
+
 
     } else {
       this.setState({
@@ -272,7 +311,7 @@ class AddEditMatch extends Component {
 
     if(!matchId){
       // ADD MATCH
-
+      getTeams(false, 'Add Match');
     } else {
       firebaseDB.ref(`matches/${matchId}`).once('value')
       .then(snapshot => {
