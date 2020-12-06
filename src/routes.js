@@ -7,12 +7,14 @@ import PublicRoute from './Components/authRoutes/publicRoutes';
 
 import Home from './Components/home';
 import SignIn from './Components/signin';
-import Dashboard from './Components/admin/Dashboard';
+import TheTeam from './Components/theTeam';
 
+import Dashboard from './Components/admin/Dashboard';
 import AdminMatches from './Components/admin/matches';
 import AddEditMatch from './Components/admin/matches/addEditMatch';
 import AdminPlayers from './Components/admin/players';
 import AddEditPlayer from './Components/admin/players/addEditPlayer';
+
 
 
 const Routes = (props) => {
@@ -80,6 +82,14 @@ const Routes = (props) => {
           restricted={false}
           component={Home}
           path="/" 
+        />
+
+        <PublicRoute 
+          {...props} 
+          exact
+          restricted={false}
+          component={TheTeam}
+          path="/the_team" 
         />
 
       </Switch>
