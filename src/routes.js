@@ -8,6 +8,7 @@ import PublicRoute from './Components/authRoutes/publicRoutes';
 import Home from './Components/home';
 import SignIn from './Components/signin';
 import TheTeam from './Components/theTeam';
+import TheMatches from './Components/theMatches';
 
 import Dashboard from './Components/admin/Dashboard';
 import AdminMatches from './Components/admin/matches';
@@ -90,6 +91,14 @@ const Routes = (props) => {
           restricted={false}
           component={TheTeam}
           path="/the_team" 
+        />
+
+        <PublicRoute 
+          {...props} 
+          exact
+          restricted={false}
+          component={TheMatches}
+          path="/the_matches" 
         />
 
       </Switch>
