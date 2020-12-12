@@ -14,7 +14,7 @@ class TheMatches extends Component {
     loading: true,
     matches: [],
     filterMatches: [],
-    playerFilter: 'All',
+    playedFilter: 'All',
     resultFilter: 'All'
   }
 
@@ -32,7 +32,7 @@ class TheMatches extends Component {
     })
   }
 
-  showPlayed = (played) => {
+  showPlayed = played => {
     let list;
 
     if(played === 'All'){
@@ -45,13 +45,31 @@ class TheMatches extends Component {
 
     this.setState({
       filterMatches: list,
-      playerFilter: played,
+      playedFilter: played,
       resultFilter: 'All'
     });
   }
 
+  showResult = result => {
+    let list;
+
+    if(result === 'All'){
+      list = this.state.matches;
+    } else {
+      list = this.state.matches.filter(match => {
+        return match.result == result;
+      });
+    }
+
+    this.setState({
+      filterMatches: list,
+      playedFilter: 'All',
+      resultFilter: result
+    });
+  }
+
   render() {
-   const {filterMatches} = this.state;
+   const {filterMatches, playedFilter, resultFilter} = this.state;
     return (
       <div className="the_matches_container">
          <div className="the_matches_wrapper">
@@ -63,22 +81,54 @@ class TheMatches extends Component {
                   </div>
                   <div className="cont">
                     <div 
-                      className={`option`}
+                      className={`option ${playedFilter === 'All' ? 'active' : ''}`}
                       onClick={() => this.showPlayed('All')}
                     >
                       All
                     </div>
                     <div 
-                      className={`option`}
+                      className={`option ${playedFilter === 'Yes' ? 'active' : ''}`}
                       onClick={() => this.showPlayed('Yes')}
                     >
                       Played
                     </div>
                     <div 
-                      className={`option`}
+                      className={`option ${playedFilter === 'No' ? 'active' : ''}`}
                       onClick={() => this.showPlayed('No')}
                     >
                       Not played
+                    </div>
+                  </div>
+                </div>
+
+                <div className="match_filters_box">
+                  <div className="tag">
+                    Result game
+                  </div>
+                  <div className="cont">
+                    <div 
+                      className={`option ${resultFilter === 'All' ? 'active' : ''}`}
+                      onClick={() => this.showResult('All')}
+                    >
+                      All
+                    </div>
+                    <div 
+                      className={`option ${resultFilter === 'W' ? 'active' : ''}`}
+                      onClick={() => this.showResult('W')}
+                    >
+                      W
+                    </div>
+                    <div 
+                      className={`option ${resultFilter === 'D' ? 'active' : ''}`}
+                      onClick={() => this.showResult('D')}
+                    >
+                     D
+                    </div>
+                    <div 
+                      className={`option ${resultFilter === 'L' ? 'active' : ''}`}
+                      onClick={() => this.showResult('L')}
+                    >
+                     L
                     </div>
                   </div>
                 </div>
