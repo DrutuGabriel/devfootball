@@ -6,6 +6,7 @@ import Routes from './routes';
 import {firebase} from './firebase';
 
 import './Resources/css/app.css';
+import './Resources/css/responsive.css';
 
 
 const App = (props) => {
