@@ -392,6 +392,7 @@ footer .footer_discl {
 .home_meetplayers_wrapper {
     padding-bottom: 100px;
     min-height: 600px;
+    overflow: hidden;
 }
 
 .home_meetplayers .home_card_wrapper {
