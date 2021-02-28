@@ -47,6 +47,34 @@
     width: 200px;
     height: 200px;
   }
+
+  .player_card_wrapper {
+    width: 180px;
+  }
+
+  .player_card_wrapper .player_card_number {
+    font-size: 115px;
+    line-height: 110px;
+  }
+
+  .player_card_wrapper .player_card_name span {
+    font-size: 20px;
+  }
+
+  .team_category_wrapper .title {
+    font-size: 50px;
+    margin: 20px 0px;
+  }
+
+  .the_matches_wrapper {
+    flex-flow: column;
+  }
+  .the_matches_wrapper .right {
+    width: 100%;
+  }
+  .league_table_wrapper {
+    border-left: 0 none;
+  }
 }
 
 @media screen and (max-width: 760px){
@@ -61,6 +89,26 @@
   }
   .home_matches_wrapper .home_matches .item:last-of-type {
     margin-bottom: 35px;
+  }
+}
+
+@media screen and (max-width: 640px){
+  .match_box_big {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    height: auto;
+  }
+  .match_box_big .block_wraper {
+    float: none;
+    margin: 0 auto;
+  }
+  .block_wraper.nfo {
+    border-left: 0 none;
+    height: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
   }
 }
 
@@ -91,5 +139,33 @@
 
   .promotion_wrapper {
     padding: 30px 0px 70px 0px;
+  }
+
+}
+
+@media screen and (max-width: 460px){
+  .team_category_wrapper .title {
+    text-align: center;
+  }
+  .team_category_wrapper .team_cards {
+    justify-content: center;
+  }
+  .team_category_wrapper .team_cards .item {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .player_card_wrapper .player_card_number {
+    font-size: 100px;
+    line-height: 100px;
+  }
+
+  .match_filters {
+    flex-flow: column;
+  }
+
+  .league_table_wrapper {
+    width: 100%;
+    overflow: hidden;
   }
 }
