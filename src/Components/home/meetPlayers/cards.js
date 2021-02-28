@@ -4,25 +4,31 @@ import Animate from 'react-move/Animate';
 import PlayerCard from '../../ui/playerCard';
 import Otamendi from '../../../Resources/images/players/Otamendi.png';
 
-class HomeCards extends Component {
+class HomeCards extends Component {  
+  constructor(){
+    super();
 
-  state = {
-    cards: [
-      {
-        bottom: 90,
-        left: 300
-      },
-      {
-        bottom: 60,
-        left: 200
-      },
-      { bottom: 30,
-        left: 100},
-      {
-        bottom: 0,
-        left: 0
-      }
-    ]
+    const { innerWidth: width } = window;
+
+    this.state = {
+      cards: [
+        {
+          bottom: 90,
+          left: Math.floor(width * 0.075)
+        },
+        {
+          bottom: 60,
+          left: Math.floor(width * 0.05)
+        },
+        { bottom: 30,
+          left: Math.floor(width * 0.025)
+        },
+        {
+          bottom: 0,
+          left: 0
+        }
+      ]
+    }
   }
 
   showAnimateCards = () => (

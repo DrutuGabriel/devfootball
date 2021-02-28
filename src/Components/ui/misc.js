@@ -2,6 +2,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 export const Tag = (props) => {
+  // include class from props
+  // remove fontsize, only put it if props.size is provided
   const template = <div
     style={{
       background: props.bck,
@@ -12,6 +14,7 @@ export const Tag = (props) => {
       fontFamily: 'Righteous',
       ...props.add
     }}
+    className={props.addClass ?  props.addClass : ''}
   >
     {props.children}
   </div>;
