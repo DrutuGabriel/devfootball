@@ -11,9 +11,11 @@ class MeetPlayers extends Component {
   }
 
   render() {
+    const { innerWidth: width } = window;
+ 
     return (
       <Reveal
-        fraction={0.7}
+        fraction={width < 760 ? 0.3 : 0.7}
         onReveal={() => {
            this.setState({show: true});
         }}
@@ -39,6 +41,7 @@ class MeetPlayers extends Component {
                       display: 'inline-block',
                       marginBottom: '20px'
                     }}
+                    addClass="meet-players-tag"
                    >
                      Meet
                    </Tag>
@@ -53,6 +56,7 @@ class MeetPlayers extends Component {
                       display: 'inline-block',
                       marginBottom: '20px'
                     }}
+                    addClass="meet-players-tag"
                    >
                      The
                    </Tag>
@@ -67,6 +71,7 @@ class MeetPlayers extends Component {
                       display: 'inline-block',
                       marginBottom: '20px'
                     }}
+                    addClass="meet-players-tag"
                    >
                      Players
                    </Tag>
