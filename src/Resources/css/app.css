@@ -176,6 +176,9 @@ footer .footer_discl {
 .featured_text {
     position: relative;
     font-family: 'Righteous', cursive;
+    width: 100%;
+    left: 0;
+    font-size: 90px;
 }
 
 
@@ -186,35 +189,42 @@ footer .footer_discl {
 }
 
 .featured_number {
-    font-size: 270px;
+    font-size: 3em;
     color: #ffffff;
-    transform: translate(260px,170px);
+    left: 20.2%;
+    top: 0.63em;
     position: absolute;
+    margin-left: -12px;
 }
 
 .featured_player {
-    width: 500px;
-    height: 500px;
+    width: 5.6em;
+    height: 5.6em;
     background-size: contain !important;
     background-repeat: no-repeat !important;
     position: absolute;
+    font-size: 1em;
+    left: 42.97%;
+    top: 2.233em;
 }
 .featured_first {
     position: absolute;
     background: #0e1731;
     color: #ffffff;
-    font-size: 92px;
+    font-size: 1em;
     text-transform: uppercase;
     padding: 0px 20px;
+    top: 5em;
 }
 
 .featured_second {
     position: absolute;
     background: #0e1731;
     color: #ffffff;
-    font-size: 92px;
+    font-size: 1em;
     text-transform: uppercase;
     padding: 0px 20px;
+    top: 6.51em;
 }
 
 /*=============================

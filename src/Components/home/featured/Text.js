@@ -28,7 +28,7 @@ class Text extends React.Component{
             className="featured_number"
             style={{
               opacity,
-              transform: `translate(260px, 170px) rotateY(${rotate}deg)`
+              transform: `rotateY(${rotate}deg)`,
             }}
             >
               3
@@ -44,13 +44,11 @@ class Text extends React.Component{
     show={true}
     start={{
       opacity: 0,
-      x: 503,
-      y: 450
+      x: 39.3,
     }}
     enter={{
       opacity:[1],
-      x: [273],
-      y: [450],
+      x: [20.2],
       timing:{duration: 500, ease: easePolyOut}
     }}
   >
@@ -60,7 +58,7 @@ class Text extends React.Component{
           className="featured_first"
           style={{
             opacity,
-            transform: `translate(${x}px, ${y}px)`
+            left: `${x}%`
           }}
           >
             League
@@ -76,13 +74,11 @@ class Text extends React.Component{
       show={true}
       start={{
         opacity: 0,
-        x: 503,
-        y: 586
+        x: 39.3,
       }}
       enter={{
         opacity:[1],
-        x: [273],
-        y: [586],
+        x: [20.2],
         timing:{
           duration: 500, 
           ease: easePolyOut, 
@@ -96,7 +92,7 @@ class Text extends React.Component{
             className="featured_second"
             style={{
               opacity,
-              transform: `translate(${x}px, ${y}px)`
+              left: `${x}%`
             }}
             >
               Championships
@@ -128,7 +124,6 @@ class Text extends React.Component{
             style={{
               opacity,
               background: `url(${FeaturedPlayer})`,
-              transform: `translate(550px, 201px)`
             }}
             >
              
