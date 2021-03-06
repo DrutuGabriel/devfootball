@@ -232,6 +232,10 @@
 }
 
 @media screen and (max-width: 460px){
+  .header_logo {
+    padding-right: 65px;
+  }
+
   .team_category_wrapper .title {
     text-align: center;
   }

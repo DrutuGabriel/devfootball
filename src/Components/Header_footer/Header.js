@@ -7,6 +7,40 @@ import {Link} from 'react-router-dom';
 import {CityLogo} from '../ui/icons';
 
 class Header extends Component {
+  constructor(){
+    super();
+
+    this.state = {
+      logoLeft: 0
+    };
+
+    this.logoContainer = React.createRef();
+  }
+  
+
+  componentDidMount(){
+    // add event listener
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount(){
+    // remove event listener
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll = (event) => {
+    // const containerWidth = this.logoContainer.current.getBoundingClientRect().width;
+
+    let logoLeft = (window.scrollY / (window.document.body.offsetHeight - window.top.innerHeight)) * 100;
+    if(logoLeft > 100){
+      logoLeft = 100;
+    }
+
+    this.setState({
+      logoLeft
+    });
+  }
+
   render() {
     return (
       <AppBar
@@ -20,12 +54,13 @@ class Header extends Component {
       >
         <Toolbar style={{display: 'flex'}}>
           <div style={{flexGrow: 1}}>
-            <div className="header_logo">
+            <div className="header_logo" ref={this.logoContainer}>
               <CityLogo
                 link={true}
                 linkTo="/"
                 width="50px"
                 height="50px"
+                left={this.state.logoLeft}
               />
             </div>
           </div>
