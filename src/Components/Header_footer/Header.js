@@ -24,8 +24,8 @@ class Header extends Component {
               <CityLogo
                 link={true}
                 linkTo="/"
-                width="70px"
-                height="70px"
+                width="50px"
+                height="50px"
               />
             </div>
           </div>
