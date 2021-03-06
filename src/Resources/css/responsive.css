@@ -194,6 +194,12 @@
   }
 }
 
+@media screen and (max-width: 599px){
+  .the_matches_container {
+    margin-top: 76px;
+  }
+}
+
 @media screen and (max-width: 520px){
   .promotion_wrapper .promotion_animation {
     align-items: center;
@@ -266,4 +272,10 @@
     top: 25px;
   }
   
+}
+
+@media screen and (min-width: 1120px){
+  .match_box_big .block_wraper {
+    min-width: 250px;
+  }
 }
