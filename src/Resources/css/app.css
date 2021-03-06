@@ -164,6 +164,7 @@ footer .footer_discl {
 .featured_wrapper {
     margin: 0 auto;
     width: 1280px;
+    max-width: 100%;
     margin-top: 90px;
     height: 800px;
     overflow: hidden;
@@ -179,8 +180,8 @@ footer .footer_discl {
 
 
 .featured_stripes .stripe {
-    width: 230px;
-    height: 1200px;
+    width: 17.97%;
+    height: 1260px;
     position: absolute;
 }
 

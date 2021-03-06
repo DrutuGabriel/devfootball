@@ -15,7 +15,7 @@ class MeetPlayers extends Component {
  
     return (
       <Reveal
-        fraction={width < 760 ? 0.3 : 0.7}
+        fraction={width < 760 ? 0.25 : 0.7}
         onReveal={() => {
            this.setState({show: true});
         }}

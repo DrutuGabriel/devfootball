@@ -4,32 +4,37 @@ import Animate from 'react-move/Animate';
 
 
 class Stripes extends Component {
+  constructor(){
+    super();
 
-  state = {
-    stripes: [
-      {
-        background: "#98c5e9",
-        left: 120,
-        rotate: 25,
-        top: -260,
-        delay: 0
-      },
-      {
-        background: "#ffffff",
-        left: 360,
-        rotate: 25,
-        top: -397,
-        delay: 200
-      },
-      {
-        background: "#98c5e9",
-        left: 600,
-        rotate: 25,
-        top: -498,
-        delay: 400
-      }
-    ]
+    this.state = {
+      stripes: [
+        {
+          background: "#98c5e9",
+          left: 50,
+          rotate: 25,
+          top: -260,
+          delay: 0
+        },
+        {
+          background: "#ffffff",
+          left: 160,
+          rotate: 25,
+          top: -397,
+          delay: 200
+        },
+        {
+          background: "#98c5e9",
+          left: 270,
+          rotate: 25,
+          top: -498,
+          delay: 400
+        }
+      ]
+    }
   }
+  
+
 
   showStripes = () => (
     this.state.stripes.map((stripe, i) => (
@@ -56,7 +61,7 @@ class Stripes extends Component {
           },
           events: {
             end(){
-              console.log('Anime finished')
+          
             }
           }
         }}
@@ -68,7 +73,7 @@ class Stripes extends Component {
               style={{
                 background,
                 opacity,
-                transform: `rotate(${rotate}deg) translate(${left}px, ${top}px)`
+                transform: `rotate(${rotate}deg) translate(${left}%, ${top}px)`
               }}  
             ></div>
           );
